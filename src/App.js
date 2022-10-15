@@ -39,8 +39,31 @@ function App() {
   }
 
 
+  const submitForm = (event)=> 
+  {
+    event.preventDefault();
+    console.log(event.target);
+  }
+
+
+  const onChangeValue = (event)=>
+  {
+    console.log(event.target.value);
+    console.log(event.target.value);
+  }
+
+
   return (
     <div className="App" style={{ marginTop: '20px' }}>
+
+
+      <form>
+        <input onChange ={onChangeValue} style={{ marginTop: '20px' }} type="text" name="email" id="" placeholder='Email'/> <br />
+        <input onChange ={onChangeValue}   style={{ marginTop: '20px' , marginBottom: '20px'}} type="text" name="password" id="" placeholder='Password'/>
+        <br />
+        <button onClick={submitForm} style={{marginBottom:'20px'}} type='Submit'>Submit</button>
+      </form>
+
 
       {user.uid
         ? <div>
